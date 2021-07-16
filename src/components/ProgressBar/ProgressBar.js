@@ -38,7 +38,7 @@ const ProgressBar = ({ value, size }) => {
    const props = size === 'large' ? parametersWrapper['large'] : (size === 'medium' ?
       parametersWrapper['medium'] : parametersWrapper['small']);
 
-   return <Wrapper {...props}> <InnerProgressBar {...getInnerProps(props, value)} /></Wrapper>;
+   return <Wrapper {...props} aria-valuemin="0" aria-valuemax="100" aria-valuenow={value} > <InnerProgressBar {...getInnerProps(props, value)} /></Wrapper>;
 };
 
 const Wrapper = styled.div`
